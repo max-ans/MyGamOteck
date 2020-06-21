@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\GameRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +43,44 @@ class Game
      * @ORM\Column(type="datetime")
      */
     private $insertedAt;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Support::class, mappedBy="games")
+     */
+    private $supports;
+
+    public function __construct()
+    {
+        $this->supports = new ArrayCollection();
+    }
+
+    /**
+     * @return Collection|Support[]
+     */
+    public function getSupports(): Collection
+    {
+        return $this->supports;
+    }
+
+    public function addSupport(Support $support): self
+    {
+        if (!$this->supports->contains($support)) {
+            $this->supports[] = $support;
+            $support->addGame($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSupport(Support $support): self
+    {
+        if ($this->supports->contains($support)) {
+            $this->supports->removeElement($support);
+            $support->removeGame($this);
+        }
+
+        return $this;
+    }
 
     public function getId(): ?int
     {
@@ -106,4 +146,6 @@ class Game
 
         return $this;
     }
+
+    
 }

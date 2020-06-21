@@ -25,6 +25,7 @@ class MainController extends AbstractController
 
         $games = $this->gameRepository->findAll();
 
+        dump($games);
         return $this->render('main/index.html.twig', [
             'games' => $games,
         ]);
