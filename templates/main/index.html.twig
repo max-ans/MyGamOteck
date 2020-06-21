@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}My GamoTeck{% endblock %}
 
 {% block body %}
 <main class="content">
@@ -19,7 +19,7 @@
                     </th>
                     <th class="">
                         <h3 class="game-title">
-                            {{ game.title }}
+                            <a href=" {{ path('game_show', {'id' : game.id}) }}" class="game-title">{{ game.title }}</a>
                         </h3>
                         <p class="description mt-3">
                             {{ game.description }}

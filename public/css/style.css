@@ -15,7 +15,14 @@ body {
     width: 100vw;
     box-sizing: border-box;
 
+}
 
+h1 > a {
+    color: white;
+}
+h1 > a:hover{
+    color: white;
+    text-decoration: none;
 }
 
 .banner {
@@ -212,4 +219,11 @@ body {
 
 .far {
     margin: 55% auto;
+}
+.machine{
+   font-family: 'Machine',sans-serif;
+}
+.title-size{
+    font-size: 2em;
+     color: rgb(30, 96, 134);
 }
