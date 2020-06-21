@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'Target';
+    src: url(../fonts/Tarrget3DItalic-LdKg.otf);
+}
+
+@font-face {
+    font-family: 'Machine';
+    src: url(../fonts/MachineGunk-nyqg.ttf);
+}
+
+
+body {
+    height: 100vh;
+
+    width: 100vw;
+    box-sizing: border-box;
+
+
+}
+
+.banner {
+    background: linear-gradient(rgb(83, 172, 202), rgb(35, 56, 172));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    align-items: baseline;
+
+
+}
+
+.title {
+    font-family: 'Target', sans-serif;
+    font-size: 3em;
+    margin: 2%;
+    width: 80%;
+    text-align: start;
+
+}
+
+
+.launch-button {
+
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
+    transition: 0.5s;
+
+
+}
+
+.launch-button:active {
+    transform: scale(1.2);
+}
+
+.button-bar {
+    margin: 4px;
+    border-radius: 20px;
+    width: 80%;
+    height: 5px;
+    background-color: rgb(245, 245, 245);
+}
+
+.navigate {
+    width: 100%;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.navigate-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.navigate-items {
+    flex-grow: 1;
+    font-family: 'Target', sans-serif;
+    font-weight: bold;
+    padding: 5px 20px 5px 15px;
+    text-align: center;
+    color: rgb(35, 56, 172);
+    height: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.507);
+
+}
+
+.navigate-items>a {
+    padding: 10px 30%;
+    color: rgb(35, 56, 172);
+    transition: 0.4s;
+}
+
+.navigate-items>a:hover {
+    color: white;
+}
+
+.items-center {
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.navigate-items:hover {
+    background: linear-gradient(rgb(35, 56, 172), rgb(83, 172, 202));
+    color: white;
+    height: 100%;
+
+}
+
+.sidebar {
+    width: 30%;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: black;
+    z-index: 11;
+
+
+}
+
+.hidden {
+    display: none;
+
+
+}
+
+.return {
+    background: white;
+    border-radius: 50%;
+
+    color: white;
+    text-align: end;
+    font-size: 2em;
+    margin: 6%;
+}
+
+.return:active {
+    transform: scale(0.8);
+}
+
+.sidebar-list {
+    list-style: none;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.items-link {
+    color: white;
+    text-decoration: none;
+    padding: 20px 50px;
+    font-size: 1.5em;
+    font-family: 'Target', sans-serif;
+}
+
+.items-link:hover {
+    text-decoration: underline;
+}
+
+/*          MAIN                */
+
+.content {
+    max-width: 960px;
+    margin: 2% auto;
+    border: 1px solid lightgrey;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.games-list-title {
+    font-size: 2em;
+    font-family: 'Machine', sans-serif;
+    color: rgb(30, 96, 134);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.game-title {
+    font-family: 'Machine', sans-serif;
+    color: rgb(30, 96, 134);
+    text-decoration: underline;
+    font-size: 1.5em;
+}
+
+.support {
+    height: 100%;
+
+}
+
+.device {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 6rem;
+    margin: 20%;
+}
+
+.game-device {
+    font-family: 'Machine', sans-serif;
+    color: rgb(30, 96, 134);
+}
+
+.far {
+    margin: 55% auto;
+}

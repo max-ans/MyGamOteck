@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My GamOteck{% endblock %}</title>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href=" {{ asset('css/reset.css') }} ">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% endblock %}
+</head>
+
+<body>
+    <div class="global">
+        <header class="banner">
+            <div class="title">
+                <h1><strong>GamO'teck</strong></h1>
+            </div>
+            <div class="launch-button">
+                <a href="">
+                    <div class="button-bar"></div>
+                    <div class="button-bar"></div>
+                    <div class="button-bar"></div>
+                </a>
+            </div>
+
+            <nav class="navigate">
+                <ul class="navigate-list">
+                    <li class="navigate-items"><a href=""> Pc</a></li>
+                    <li class="navigate-items items-center"><a href=""> Xbox </a></li>
+                    <li class="navigate-items"> <a href=""> Playstation </a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="sidebar hidden  ">
+            <div><img class="return" src=" {{ asset('images/icons8-flèche-100.png') }} " alt="" srcset=""></div>
+
+            <div class="sidebar-menu">
+                <ul class="sidebar-list">
+                    <li class="sidebar-items"><a class="items-link" href="">Pourquoi GamO'teck</a></li>
+                    <li class="sidebar-items"><a class="items-link" href="">Qui somme nous ?</a></li>
+                    <li class="sidebar-items"><a class="items-link" href="">Nous contacter</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <main class="content">
+        <div class="content-title">
+            <h2 class="games-list-title">Liste des jeux :</h2>
+        </div>
+        <div class="games-list">
+            <table class="table table-bordered mt-3">
+                <tbody class="mb-2">
+                    <tr>
+                        <th class="col-2 text-center">
+                            <img src="" alt="" class="picture">
+                        </th>
+                        <th class="col-6">
+                            <h3 class="game-title">
+
+                            </h3>
+                            <p class="description mt-3">
+
+                            </p>
+                        </th>
+                        <th class="col-2 text-center support">
+                            <ul class="device">
+                                <li class="game-device"></li>
+                                <li class="game-device"></li>
+                                <li class="game-device"></li>
+                            </ul>
+                        </th>
+                        <th class="col-2 text-center rate">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </th>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <template>
+            <div class="games-list">
+                <table class="table table-bordered mt-3">
+                    <tbody class="mb-2">
+                        <tr>
+                            <th class="col-2 text-center">
+                                <img src="https://via.placeholder.com/100x150" alt="" class="picture">
+                            </th>
+                            <th class="col-6">
+                                <h3 class="game-title">
+
+                                </h3>
+                                <p class="description mt-3">
+
+                                </p>
+                            </th>
+                            <th class="col-2 text-center support">
+                                <ul class="device">
+                                    <li class="game-device"></li>
+                                    <li class="game-device"></li>
+                                    <li class="game-device"></li>
+                                </ul>
+                            </th>
+                            <th class="col-2 text-center rate">
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </th>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </template>
+    </main>
+    {% block body %}{% endblock %}
+    <script src="https://kit.fontawesome.com/2ad259cd2e.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+    <script src=" {{ asset('js/request.js') }} "></script>
+    <script src="{{ asset('js/app.js') }} "></script>
+    {% block javascripts %}{% endblock %}
+</body>
+
+</html>
