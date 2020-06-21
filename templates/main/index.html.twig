@@ -3,5 +3,47 @@
 {% block title %}Hello MainController!{% endblock %}
 
 {% block body %}
+<main class="content">
+    <div class="content-title">
+        <h2 class="games-list-title">Liste des jeux :</h2>
+    </div>
+    <div class="games-list">
+        <table class="table table-bordered mt-3">
+            <tbody class="mb-2">
 
+                {% for game in games %}
+                    
+                <tr>
+                    <th class=" text-center">
+                        <img src="https://via.placeholder.com/100x150  " alt="" class="picture">
+                    </th>
+                    <th class="">
+                        <h3 class="game-title">
+                            {{ game.title }}
+                        </h3>
+                        <p class="description mt-3">
+                            {{ game.description }}
+                        </p>
+                    </th>
+                    <th class=" text-center support">
+                        <ul class="device">
+                            <li class="game-device"></li>
+                            <li class="game-device"></li>
+                            <li class="game-device"></li>
+                        </ul>
+                    </th>
+                    <th class="text-center rate">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </th>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
 {% endblock %}
