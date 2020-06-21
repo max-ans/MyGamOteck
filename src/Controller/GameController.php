@@ -13,6 +13,7 @@ class GameController extends AbstractController
      */
     public function gameShow(Game $game)
     {
+        dump($game);
         return $this->render('game/show.html.twig', [
             'game' => $game
         ]);
