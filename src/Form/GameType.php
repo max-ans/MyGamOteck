@@ -47,7 +47,8 @@ class GameType extends AbstractType
                 'class' => Support::class,
                 'choice_label' => 'name',
                 'multiple' => true,
-                'expanded' => true
+                'expanded' => true,
+                'by_reference' => false
             ])
         ;
     }
