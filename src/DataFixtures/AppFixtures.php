@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Game;
+use App\Entity\Support;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker\Factory;
@@ -15,18 +16,38 @@ class AppFixtures extends Fixture
     {
 
         $faker = Factory::create();
-        // $product = new Product();
-        // $manager->persist($product);
-        for ($indexGame = 0; $indexGame < 11; $indexGame++){
-            $game = new Game();
-            $game->setTitle($faker->word());
-            $game->setDescription($faker->realText());
-            $game->setImage($faker->imageUrl(100,150,));
-            $game->setNote($faker->randomDigitNotNull());
-            $game->setInsertedAt(new \DateTime($faker->date()));
+       
+        
+        $console = [
+            'Playstation',
+            'Xbox',
+            'PC',    
+        ];
 
-            $manager->persist($game);
+
+
+        for ($indexConsole = 0; $indexConsole < count($console); $indexConsole++){
+            $newConsole = new Support();
+            $newConsole->setName($console[$indexConsole])
+                       ->setEnterprise($faker->company())
+                       ->setDescription($faker->realText());
+                       
+                       
+            for ($indexGame = 0; $indexGame < 5; $indexGame++){
+                $game = new Game();
+                $game->setTitle($faker->word());
+                $game->setDescription($faker->realText());
+                $game->setImage($faker->imageUrl(100,150,));
+                $game->setNote($faker->randomDigitNotNull());
+                $game->setInsertedAt(new \DateTime($faker->date()));
+               
+                
+                $manager->persist($game);
+                
+            }
             
+            $manager->persist($newConsole);
+                       
         }
 
         $manager->flush();
