@@ -4,9 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Game;
 use App\Form\GameType;
+use App\Service\ImageUploader;
 use App\Repository\GameRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,11 +17,13 @@ class GameController extends AbstractController
 
     private $gameRepository;
     private $manager;
+    
 
     public function __construct(GameRepository $gameRepository,EntityManagerInterface $manager)
     {
         $this->gameRepository = $gameRepository;
         $this->manager = $manager;
+        
     }
 
 
@@ -38,7 +42,7 @@ class GameController extends AbstractController
     /**
      * @Route("/add" , name="game_add")
      */
-    public function add (Request $request) {
+    public function add (Request $request, ImageUploader $uploder) {
 
         $newGame = new Game();
 
@@ -47,7 +51,25 @@ class GameController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-            dump($newGame);
+            $newFilename = $uploder->saveAndMoveFile($form->get('image')->getData());
+
+       
+            if ($newFilename !== null) {
+                $newGame->setImage($newFilename);
+               
+            }
+
+           
+
+            
+            $this->manager->persist($newGame);
+            $this->manager->flush();
+
+            $this->addFlash('success' ,  'Votre nouveau jeu a bien été ajouté');
+            
+            return $this->redirectToRoute('main');
+
+           
         }
 
         return $this->render('game/add.html.twig', [

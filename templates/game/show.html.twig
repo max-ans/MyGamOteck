@@ -6,9 +6,10 @@
 
 <div class="container">
 
+
     
     <div class="media mt-5 border p-2">
-        <img src=" https://via.placeholder.com/100x150 " class="mr-3" alt="...">
+        <img src="{{ asset('images/game')}}/{{game.image}} " class="mr-3" alt="...">
         <div class="media-body">
             <h2 class="mt-5  machine game-title">{{ game.title }}</h2>
             {{ game.description }}

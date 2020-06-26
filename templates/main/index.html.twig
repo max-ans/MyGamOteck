@@ -14,11 +14,11 @@
                 {% for game in games %}
                     
                 <tr>
-                    <th class=" text-center">
-                        <img src="https://via.placeholder.com/100x150  " alt="" class="picture">
+                    <th class=" text-center align-middle">
+                        <img src="{{ asset('images/game')}}/{{game.image}}   " alt="" class="picture">
                     </th>
                     <th class="">
-                        <h3 class="game-title">
+                        <h3 class="game-title ">
                             <a href=" {{ path('game_show', {'id' : game.id}) }}" class="game-title">{{ game.title }}</a>
                         </h3>
                         <p class="description mt-3">

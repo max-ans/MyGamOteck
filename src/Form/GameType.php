@@ -32,7 +32,10 @@ class GameType extends AbstractType
             ] )
             ->add('note', IntegerType::class , 
             [
-                'label' => 'Note sur dix'
+                'label' => 'Note sur 10',
+                'attr' => [
+                    'placeholder' => '1 étant la plus mauvaise note et 10 la meilleur'
+                ]
             ])
             ->add('insertedAt', DateType::class, 
             [
