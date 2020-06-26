@@ -7,12 +7,15 @@
 <div class="container">
 
 
-    
+
     <div class="media mt-5 border p-2">
         <img src="{{ asset('images/game')}}/{{game.image}} " class="mr-3 picture-show" alt="...">
         <div class="media-body">
             <h2 class="mt-5  machine game-title">{{ game.title }}</h2>
-            {{ game.description }}
+
+            <p class="mt-2">
+                {{ game.description }}
+            </p>
         </div>
     </div>
     
