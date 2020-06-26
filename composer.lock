@@ -4192,8 +4192,7 @@
             ],
             "time": "2020-06-06T08:46:27+00:00"
         },
-       
-        {
+       {
             "name": "symfony/polyfill-intl-normalizer",
             "version": "v1.17.1",
             "source": {
