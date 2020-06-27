@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Catégories{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 class="game-title category text-center mt-5 mb-2" > Ajouter un categorie</h2>
+
+
+    {{form_start(form)}}
+    {{form_widget(form)}}
+
+    <button type="submit" class="btn btn-primary" > Enregistrer </button>
+
+    {{form_end(form)}}
+</div>
+
+
+{% endblock %}

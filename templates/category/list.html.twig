@@ -10,11 +10,14 @@
     {% for category in allCategories %}
              
     
-    <ul class="list-group mt-1 ">
-        <li class="list-group-item"><a href=" {{ path('category_show', {'slug' : category.slug}) }} ">{{category.name}}</a></li>
+    <ul class="list-group mt-1  ">
+        <li class="list-group-item d-flex justify-content-between align-middle">
+            <a href=" {{ path('category_show', {'slug' : category.slug}) }} " class="game-title" >{{category.name}}</a>
 
-       
+           
+        </li>
     </ul>
+
     
 {% endfor %}
 

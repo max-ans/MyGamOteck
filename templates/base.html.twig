@@ -50,6 +50,21 @@
         </div>
 
     </div>
+
+
+    <div class="container">
+
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }} text-center">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    
+
+
         <template>
             <div class="games-list">
                 <table class="table table-bordered mt-3">
