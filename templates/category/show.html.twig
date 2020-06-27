@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %} {{category.name}} {% endblock %}
+
+{% block body %}
+<div class="container">
+    
+    <div class="jumbotron mt-2">
+        
+        <h2 class="game-title text-center category-title mb-2" > {{ category.name }} </h2>
+        <p class="lead text-center"> {{ category.description }} </p>
+        <hr class="my-4">
+        <h4 class="game-title" > Jeux de la categorie present en bibliotheque </h4>
+
+        <ul class="list-group">
+            {% for game in category.games %}
+            <li class="list-group-item mt-2"><a href=" {{ path('game_show' , {'id' : game.id}) }} ">{{ game.title }}</a></li>
+                
+            {% endfor %}
+           
+          </ul>
+          <div class="control d-flex justify-content-around mt-5">
+
+              <a class="btn btn-warning" href=" {{ path('category_edit' , {'slug' : category.slug}) }} ">éditer</a>
+              <a class="btn btn-danger" href="{{ path('category_delete' , {'slug' : category.slug}) }} " onclick="alert('Etes vous sur de vouloir supprimer la catégorie ?')" >Supprimer</a>
+
+          </div>
+        </div>
+        <a class="mt-5" href=" {{ path('category') }} ">Retour a la liste des catégories</a>
+
+
+</div>
+
+
+{% endblock %}

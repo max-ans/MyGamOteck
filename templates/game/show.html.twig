@@ -6,6 +6,7 @@
 
 <div class="container">
 
+    
 
 
     <div class="media mt-5 border p-2">
@@ -19,13 +20,25 @@
         </div>
     </div>
     
-    <h3 class="game-title mt-4 mb-2 ">Support :</h3>
     
-    <ul class="list-group  "> 
-    {% for support in game.supports %}
+    {# <h3 class="game-title mt-4 mb-2 ">Support :</h3> #}
+    <div class="infos row justify-content-around">
+        <ul class="list-group col-5 "><span class="game-title mt-4 mb-2" >Support(s)</span>
+        {% for support in game.supports %}
         <li class="list-group-item "> {{ support.name }} </li>
-    {% endfor %}
-    </ul>
+        {% else %}
+                <li class=" alert alert-warning "> Aucun support n'est renseigné sur ce jeux</li>
+        {% endfor %}
+        </ul>
+        <ul class="list-group col-5 "><span class="game-title mt-4 mb-2" >Categorie(s)</span>
+            {% for category in game.categories %}
+                <li class="list-group-item "> {{ category.name }} </li>
+            {% else %}
+                <li class=" alert alert-warning"> Aucune catégorie n'est renseignée sur ce jeux</li>
+            {% endfor %}
+        </ul>
+
+    </div>
 
 </div>
 {% endblock %}

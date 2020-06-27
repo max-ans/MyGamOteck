@@ -234,3 +234,10 @@ h1 > a:hover{
 .picture-show {
     width: 20%;
 }
+.category{
+    font-size: 2em;
+}
+
+.category-title{
+    font-size: 3em;
+}

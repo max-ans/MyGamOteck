@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use App\Entity\Game;
 use App\Entity\Support;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -48,8 +49,21 @@ class GameType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => true,
                 'expanded' => true,
-                'by_reference' => false
+                'by_reference' => false,
+                'label' => 'Support(s)'
+
             ])
+            ->add('categories', EntityType::class,
+            [
+                'class' => Category::class,
+                'choice_label' => 'name',
+                'multiple' => true,
+                'expanded' => true,
+                'by_reference' => false,
+                'label' => 'Catégorie(s)'
+
+            ]
+            )
         ;
     }
 
