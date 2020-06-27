@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -35,5 +36,13 @@ class CategoryController extends AbstractController
         ]);
     }
 
-    
+    /**
+     * @Route("/category/{slug}" , name="category_show")
+     */
+    public function show(Category $category)
+    {
+        return $this->render('category/show.html.twig',[
+            'category' => $category
+        ]);
+    }
 }
