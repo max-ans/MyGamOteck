@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Catégories{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h2 class="game-title category text-center mt-5 mb-2" > Les Categories</h2>
+
+    {% for category in allCategories %}
+             
+    
+    <ul class="list-group mt-1 ">
+        <li class="list-group-item"><a href="">{{category.name}}</a></li>
+
+        {# <li class="list-group-item">{{category.description}}</li>
+        <li class="list-group-item">
+            {% for game in category.games %}
+                <a href=" ">{{ game.title }}</a>
+            {% endfor %} </li> #}
+    </ul>
+    
+{% endfor %}
+
+</div>
+
+
+{% endblock %}
