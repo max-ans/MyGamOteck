@@ -34,6 +34,11 @@ class Category
      */
     private $games;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
     public function __construct()
     {
         $this->games = new ArrayCollection();
@@ -90,6 +95,18 @@ class Category
         if ($this->games->contains($game)) {
             $this->games->removeElement($game);
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
