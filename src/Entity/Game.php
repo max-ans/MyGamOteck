@@ -49,9 +49,15 @@ class Game
      */
     private $supports;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Category::class, mappedBy="games")
+     */
+    private $categories;
+
     public function __construct()
     {
         $this->supports = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     /**
@@ -143,6 +149,34 @@ class Game
     public function setInsertedAt(\DateTimeInterface $insertedAt): self
     {
         $this->insertedAt = $insertedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->addGame($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        if ($this->categories->contains($category)) {
+            $this->categories->removeElement($category);
+            $category->removeGame($this);
+        }
 
         return $this;
     }

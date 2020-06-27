@@ -31,3 +31,15 @@ __Le 26 juin 2020__
 - Création d'une entité categorie 
 - Modification de l'entité ```Game``` pour la liée a ```Category```
 - création des users (Entité , Formulaire ,Gestion de droits, Voter et Authentification)
+  
+  -------------------------------------------------------------------------------
+
+__Le 27 juin 2020__
+
+# Fait #
+- Résolution d'un conflit lors de la fusion de la branch ```addGame ``` sur master
+- Création d'une entité ```Category``` 
+- Relation entre ```Category``` et  ```Game``` en ManyToMany
+- Modification du ```GameType``` afin d'ajouter les catégories. 
+- Affichage de(s) catégorie(s) dans la template show (détails d'un jeu vidéo)
+  
