@@ -47,5 +47,15 @@ __Le 27 juin 2020__
 - Mise en place d'un formulaire d'ajout et de modification pour ```Category``` 
 - Utilisation du slug sur la route ```category_show``` 
 - Affichage des message Flashes dans la template base.html.twig
-- 
+
+
+## A faire ##
+
+- Création des users (Entité , Formulaire ,Gestion de droits, Voter et Authentification)
+- Utiliser SwiftMailer pour l'authentification
+- Mise ne place de test unitaire et fonctionnel
+- Mettre en place un appel a une Api en JS pour récuperer les infos d'un jeu (RAWG -> voir doc)
+- Création d'une entité ```Editor ```  
+- Création d'une entité ```Develloper ```  
+- Mise a jour de ```Game``` en inserant une date de creation
   
