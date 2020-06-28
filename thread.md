@@ -58,4 +58,22 @@ __Le 27 juin 2020__
 - Création d'une entité ```Editor ```  
 - Création d'une entité ```Develloper ```  
 - Mise a jour de ```Game``` en inserant une date de creation
-  
+
+
+__le 28 juin 2020__
+
+# Fait #
+
+- Modification du rendu des formulaire
+
+
+## A faire ##
+
+  - Création des users (Entité , Formulaire ,Gestion de droits, Voter et Authentification)
+- Utiliser SwiftMailer pour l'authentification
+- Mise ne place de test unitaire et fonctionnel
+- Mettre en place un appel a une Api en JS pour récuperer les infos d'un jeu (RAWG -> voir doc)
+- Création d'une entité ```Editor ```  
+- Création d'une entité ```Develloper ```  
+- Mise a jour de ```Game``` en inserant une date de creation
+- Création de customs query pour la navigation par support en home
