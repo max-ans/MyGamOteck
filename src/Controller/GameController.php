@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Game;
 use App\Form\GameType;
 use App\Service\ImageUploader;
+use App\Service\Slugger;
 use App\Repository\GameRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -28,7 +29,7 @@ class GameController extends AbstractController
 
 
     /**
-     * @Route("/{id}/game", name="game_show" )
+     * @Route("/{id}/game", name="game_show", requirements={"id":"\d+"} )
      */
     public function gameShow($id)
     {
@@ -43,7 +44,7 @@ class GameController extends AbstractController
     /**
      * @Route("/add" , name="game_add")
      */
-    public function add (Request $request, ImageUploader $uploder) {
+    public function add (Request $request, ImageUploader $uploder,Slugger $slugger) {
 
         $newGame = new Game();
 
@@ -54,13 +55,14 @@ class GameController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             $newFilename = $uploder->saveAndMoveFile($form->get('image')->getData());
 
-       
             if ($newFilename !== null) {
                 $newGame->setImage($newFilename);
                
             }
 
-           
+            // Create slug of game title
+            $slug = $slugger->slugify($newGame->getTitle());
+            $newGame->setSlug($slug);
 
             
             $this->manager->persist($newGame);

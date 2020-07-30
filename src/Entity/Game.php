@@ -54,6 +54,11 @@ class Game
      */
     private $categories;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=false)
+     */
+    private $slug;
+
     public function __construct()
     {
         $this->supports = new ArrayCollection();
@@ -177,6 +182,18 @@ class Game
             $this->categories->removeElement($category);
             $category->removeGame($this);
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
