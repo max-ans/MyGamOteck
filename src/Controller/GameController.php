@@ -33,6 +33,7 @@ class GameController extends AbstractController
     public function gameShow($id)
     {
         $game = $this->gameRepository->findOneWithData($id);
+        dump($game);
         return $this->render('game/show.html.twig', [
             'game' => $game
         ]);
