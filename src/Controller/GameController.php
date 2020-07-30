@@ -29,7 +29,7 @@ class GameController extends AbstractController
 
 
     /**
-     * @Route("/{id}/game", name="game_show" )
+     * @Route("/{id}/game", name="game_show", requirements={"id":"\d+"} )
      */
     public function gameShow($id)
     {
