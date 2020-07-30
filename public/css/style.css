@@ -190,6 +190,17 @@ label {
     padding: 2%;
     border-radius: 5px;
 }
+.content-title {
+    display: flex;
+    justify-content: space-between;
+}
+.content-title > h2 {
+    display: inline;
+}
+.redirect-add {
+    width: 2em;
+    fill: #225F86 ;
+}
 
 .games-list-title {
     font-size: 2em;
@@ -197,6 +208,7 @@ label {
     color: rgb(30, 96, 134);
     font-weight: bold;
     text-decoration: underline;
+   
 }
 
 .game-title {
