@@ -77,3 +77,21 @@ __le 28 juin 2020__
 - Création d'une entité ```Develloper ```  
 - Mise a jour de ```Game``` en inserant une date de creation
 - Création de customs query pour la navigation par support en home
+  
+  
+ __le 31 juillet 2020__
+
+# Fait #
+
+- Reprise du projet après l'apothèose!
+- Mise en place de la navigation par onglet de console en home page
+- Réalisation de l'édition d'un jeu grace à un lien sur la page de détails d'un jeu
+
+## a faire ##
+
+ 
+- Mise en place de l'inscription/authentification.
+- Modification du comportement de la home page en fonction de l'authentification.
+- Réalisation d'un footer.
+  
+  
