@@ -1,9 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} {{ support.name }} {% endblock %}
+{% block title %}
+	{{ support.name }}
+{% endblock %}
 
 {% block body %}
 
+	<main class="content">
+		<div class="content-title">
+			<h2 class="games-list-title">Liste des jeux :</h2>
+			<a href=" {{ path('game_add') }} " title="Ajouter un jeu"><img src=" {{ asset('images')}}/add.svg " alt="" class="redirect-add"></a>
+		</div>
+		<div class="games-list">
+			<table class="table table-bordered mt-3">
+				<tbody class="mb-2">
 
+					{% for game in games %}
 
-{% endblock %}
+						<tr>
+							<th class=" text-center align-middle">
+								<img src="{{ asset('images/game')}}/{{game.image}} " alt="" class="picture">
+							</th>
+							<th class="">
+								<h3 class="game-title ">
+									<a href=" {{ path('game_show', {'id' : game.id}) }}" class="game-title">{{ game.title }}</a>
+								</h3>
+								<p class="description mt-3">
+									{{ game.description }}
+								</p>
+							</th>
+
+						</tr>
+					{% endfor %}
+
+				</tbody>
+
+			</table>
+
+		</div>
+    
+
+	{% endblock %}
