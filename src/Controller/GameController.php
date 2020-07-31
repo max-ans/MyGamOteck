@@ -85,13 +85,19 @@ class GameController extends AbstractController
     /**
      * @Route ("/game/edit/{slug}", name="game_edit")
      */
-    public function edit (Request $request, Game $game)
+    public function edit (Request $request, Game $game, ImageUploader $uploder)
     {
         $form = $this->createForm(GameType::class, $game);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
+            $newFilename = $uploder->saveAndMoveFile($form->get('image')->getData());
+
+            if ($newFilename !== null) {
+                $game->setImage($newFilename);
+               
+            }
 
             // Create slug of game title
             $slug = $this->slugger->slugify($game->getTitle());

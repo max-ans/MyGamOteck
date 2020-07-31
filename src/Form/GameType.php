@@ -29,7 +29,8 @@ class GameType extends AbstractType
             ])
             ->add('image', FileType::class,
             [ 
-                'label' => 'Uploader une image du jeu'
+                'label' => 'Uploader une image du jeu',
+                'data_class' => null,
             ] )
             ->add('note', IntegerType::class , 
             [

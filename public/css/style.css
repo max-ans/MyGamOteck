@@ -253,6 +253,12 @@ label {
 .picture-show {
     width: 20%;
 }
+.edit-logo {
+    width: 1.5em;
+    position: relative;
+    right: 0em;
+    left: 52em;
+}
 .category{
     font-size: 2em;
 }

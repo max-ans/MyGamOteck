@@ -8,9 +8,9 @@
 
     
 
-
-    <div class="media mt-5 border p-2">
+    <div class="media mt-5 border p-2 ">
         <img src="{{ asset('images/game')}}/{{game.image}} " class="mr-3 picture-show" alt="...">
+        <a href=" {{ path('game_edit', {'slug' : game.slug }) }} "> <img src="{{ asset('images')}}/edit.svg" alt="" class="edit-logo" ></a>
         <div class="media-body">
             <h2 class="mt-5  machine game-title">{{ game.title }}</h2>
 
