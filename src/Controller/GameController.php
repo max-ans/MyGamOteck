@@ -18,12 +18,14 @@ class GameController extends AbstractController
 
     private $gameRepository;
     private $manager;
+    private $slugger;
     
 
-    public function __construct(GameRepository $gameRepository,EntityManagerInterface $manager)
+    public function __construct(GameRepository $gameRepository,EntityManagerInterface $manager, Slugger $slugger)
     {
         $this->gameRepository = $gameRepository;
         $this->manager = $manager;
+        $this->slugger = $slugger;
         
     }
 
@@ -78,5 +80,41 @@ class GameController extends AbstractController
         return $this->render('game/add.html.twig', [
             'formView' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route ("/game/edit/{slug}", name="game_edit")
+     */
+    public function edit (Request $request, Game $game, ImageUploader $uploder)
+    {
+        $form = $this->createForm(GameType::class, $game);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $newFilename = $uploder->saveAndMoveFile($form->get('image')->getData());
+
+            if ($newFilename !== null) {
+                $game->setImage($newFilename);
+               
+            }
+
+            // Create slug of game title
+            $slug = $this->slugger->slugify($game->getTitle());
+            $game->setSlug($slug);
+
+            $this->addFlash('success' ,  'Votre nouveau jeu a bien été modifié');
+
+            $this->manager->flush();
+
+            return $this->redirectToRoute('game_show', ['id' => $game->getId()]);
+
+        }
+
+        return $this->render('game/edit.html.twig', [
+            'formView' => $form->createView(),
+            'game' => $game
+        ]);
+
     }
 }

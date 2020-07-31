@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifié un jeu{% endblock %}
+
+{% block body %}
+<h2 class="text-center mt-5 mb-3 game-title">Modifier le jeu : {{ game.title }}</h2>
+<div class="container">
+
+    {{ form_start(formView) }}
+    {{ form_widget(formView) }}
+    <button class="btn btn-primary" type="submit">Ajouter</button>
+    {{ form_end(formView) }}
+
+</div>
+
+{% endblock %}
