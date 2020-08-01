@@ -13,6 +13,8 @@ class SupportController extends AbstractController
      */
     public function showBySupport(Support $support)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
 
         $gameBySupport = $support->getGames();
 

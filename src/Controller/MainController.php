@@ -22,6 +22,7 @@ class MainController extends AbstractController
      */
     public function index()
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $games = $this->gameRepository->findAll();
 

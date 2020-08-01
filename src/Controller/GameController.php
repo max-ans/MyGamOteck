@@ -35,6 +35,8 @@ class GameController extends AbstractController
      */
     public function gameShow($id)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $game = $this->gameRepository->findOneWithData($id);
         dump($game);
         return $this->render('game/show.html.twig', [
@@ -47,6 +49,8 @@ class GameController extends AbstractController
      * @Route("/add" , name="game_add")
      */
     public function add (Request $request, ImageUploader $uploder,Slugger $slugger) {
+
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $newGame = new Game();
 
@@ -88,6 +92,8 @@ class GameController extends AbstractController
      */
     public function edit (Request $request, Game $game, ImageUploader $uploder)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $form = $this->createForm(GameType::class, $game);
 
         $form->handleRequest($request);

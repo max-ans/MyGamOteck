@@ -99,3 +99,4 @@ __le 28 juin 2020__
 # Fait #
 
 - Mise en place de contraintes sur l'entité Game
+- Création d'une entity User avec la sécurité ( make:user )
