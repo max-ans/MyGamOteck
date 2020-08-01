@@ -93,5 +93,9 @@ __le 28 juin 2020__
 - Mise en place de l'inscription/authentification.
 - Modification du comportement de la home page en fonction de l'authentification.
 - Réalisation d'un footer.
-  
-  
+
+ __le 01 Aout 2020__  
+
+# Fait #
+
+- Mise en place de contraintes sur l'entité Game
