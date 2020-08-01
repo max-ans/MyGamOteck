@@ -25,16 +25,19 @@ class GameType extends AbstractType
             ])
             ->add('description', TextareaType::class, 
             [
-                'label' => 'Description du jeux'
+                'label' => 'Description du jeux',
+                
             ])
             ->add('image', FileType::class,
             [ 
                 'label' => 'Uploader une image du jeu',
                 'data_class' => null,
+                'required' => false
             ] )
             ->add('note', IntegerType::class , 
             [
                 'label' => 'Note sur 10',
+                'required' => false,
                 'attr' => [
                     'placeholder' => '1 étant la plus mauvaise note et 10 la meilleur'
                 ]
