@@ -54,6 +54,7 @@ class GameController extends AbstractController
 
         $form->handleRequest($request);
 
+       
         if ($form->isSubmitted() && $form->isValid()){
             $newFilename = $uploder->saveAndMoveFile($form->get('image')->getData());
 
