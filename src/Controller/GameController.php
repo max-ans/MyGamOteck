@@ -45,6 +45,8 @@ class GameController extends AbstractController
     }
 
 
+
+
     /**
      * @Route("/add" , name="game_add")
      */
@@ -71,6 +73,8 @@ class GameController extends AbstractController
             $slug = $slugger->slugify($newGame->getTitle());
             $newGame->setSlug($slug);
 
+            //set User of game
+            $newGame->addUser($this->getUser());
             
             $this->manager->persist($newGame);
             $this->manager->flush();

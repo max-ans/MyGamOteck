@@ -64,10 +64,16 @@ class Game
      */
     private $slug;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="games")
+     */
+    private $users;
+
     public function __construct()
     {
         $this->supports = new ArrayCollection();
         $this->categories = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     /**
@@ -199,6 +205,34 @@ class Game
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->addGame($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->contains($user)) {
+            $this->users->removeElement($user);
+            $user->removeGame($this);
+        }
 
         return $this;
     }

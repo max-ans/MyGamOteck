@@ -106,3 +106,15 @@ __le 28 juin 2020__
 
 ## a faire ##
 - Afficher les jeux de l'utilisateur seulement si il lui appartiennent  ( nouvelle relation entre les jeux et le users (un utilisateur peut avoir plusieur jeux et un jeu peut avoir plusieur utilisateur donc probablement many to many sauf si besoin d'information au centre))
+
+
+
+__le 03 Aout 2020__  
+
+# Fait #
+
+- Mise ne place de l'affichage des jeux seulement si ceux-ci ont était déclaré comme joué pour un utilisateur.
+
+## a faire ##
+
+- Mettre en place la sécurité ( Pour l'instant un utilisateur peut accéder a n'importe quel jeu par l'url) par des voter !!!
