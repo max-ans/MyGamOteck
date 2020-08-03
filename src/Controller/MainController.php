@@ -22,6 +22,14 @@ class MainController extends AbstractController
      */
     public function index()
     {
+        return $this->render('main/index.html.twig');
+    }
+
+    /**
+     * @Route("/home" , name="home")
+     */
+    public function home()
+    {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         // recovery user
@@ -29,7 +37,7 @@ class MainController extends AbstractController
 
         $games = $this->gameRepository->findAllByUser($user->getId());
 
-        return $this->render('main/index.html.twig', [
+        return $this->render('main/home.html.twig', [
             'games' => $games,
         ]);
     }
