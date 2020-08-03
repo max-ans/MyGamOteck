@@ -99,3 +99,10 @@ __le 28 juin 2020__
 # Fait #
 
 - Mise en place de contraintes sur l'entité Game
+- Création d'une entity User avec la sécurité ( make:user )
+- Création du formulaire de connection 
+- création du formulaire d'inscription
+- mis en place de la necessité d'etre inscrit et connecter pour accéder au site
+
+## a faire ##
+- Afficher les jeux de l'utilisateur seulement si il lui appartiennent  ( nouvelle relation entre les jeux et le users (un utilisateur peut avoir plusieur jeux et un jeu peut avoir plusieur utilisateur donc probablement many to many sauf si besoin d'information au centre))
