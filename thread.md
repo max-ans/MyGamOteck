@@ -114,7 +114,10 @@ __le 03 Aout 2020__
 # Fait #
 
 - Mise ne place de l'affichage des jeux seulement si ceux-ci ont était déclaré comme joué pour un utilisateur.
+- Création d'un aside informatif qui s'affiche lors que l'utilisateur est connecté.
 
 ## a faire ##
 
 - Mettre en place la sécurité ( Pour l'instant un utilisateur peut accéder a n'importe quel jeu par l'url) par des voter !!!
+- Gros travail de css sur le login est registration
+- Mettre en place un double champ pour la confirmation du mot de passe lors de l'inscription
