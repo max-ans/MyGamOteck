@@ -19,32 +19,19 @@ class SupportRepository extends ServiceEntityRepository
         parent::__construct($registry, Support::class);
     }
 
-    // /**
-    //  * @return Support[] Returns an array of Support objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findGamesByUserAndSupport ($id, $support)
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $queryBuilder = $this->createQueryBuilder('support');
+        $queryBuilder->leftJoin('support.games', 'game');
+        $queryBuilder->addSelect('game');
+        $queryBuilder->leftJoin('game.users', 'user');
+        $queryBuilder->addSelect('user');
+        $queryBuilder->where('user.id = :id');
+        $queryBuilder->andWhere('support.id = :support');
+        $queryBuilder->setParameter(':support', $support);
+        $queryBuilder->setParameter(':id', $id);
+        
+        $query = $queryBuilder->getQuery();
+        return $query->getOneOrNullResult();
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Support
-    {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

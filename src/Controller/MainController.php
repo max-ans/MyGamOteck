@@ -24,9 +24,11 @@ class MainController extends AbstractController
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
-        $games = $this->gameRepository->findAll();
+        // recovery user
+        $user = $this->getUser();
 
-        dump($games);
+        $games = $this->gameRepository->findAllByUser($user->getId());
+
         return $this->render('main/index.html.twig', [
             'games' => $games,
         ]);

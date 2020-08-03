@@ -20,9 +20,22 @@ class GameRepository extends ServiceEntityRepository
     }
 
   
+    // id is User Id
+    public function findAllByUser ($id)
+    {
+        $queryBuilder = $this->createQueryBuilder('game'); 
+        $queryBuilder->leftJoin('game.users', 'user');
+        $queryBuilder->addSelect('user');
+        $queryBuilder->where('user.id = :id');
+        $queryBuilder->setParameter(':id', $id);
+        $query = $queryBuilder->getQuery();
+        return $query->getResult();
+
+    }
 
 
-    public function findOneWithData ($id) {
+    public function findOneWithData ($id)
+    {
 
 
         $queryBuilder = $this->createQueryBuilder('game');
