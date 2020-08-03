@@ -17,6 +17,10 @@ body {
 
 }
 
+.title {
+    width: 2em;
+}
+
 h1 > a {
     color: white;
 }
@@ -302,4 +306,17 @@ label {
 .login-link {
     text-decoration: none;
 
+}
+.aside {
+    width: 12em;
+    text-align: center;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+.aside-link{
+    margin: 5%;
 }

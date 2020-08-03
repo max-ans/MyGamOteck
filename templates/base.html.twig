@@ -25,6 +25,7 @@
 						</a>
 					</h1>
 				</div>
+				
 				<div class="launch-button">
 					<a href="">
 						<div class="button-bar"></div>
@@ -52,6 +53,9 @@
 					</ul>
 				</nav>
 			</header>
+			{% if app.user %}
+			{% include "user/aside_user.html.twig" %}
+			{% endif %}
 			<div class="sidebar hidden  ">
 				<div><img class="return" src=" {{ asset('images/icons8-flèche-100.png') }} " alt="" srcset=""></div>
 
