@@ -14,7 +14,7 @@
         <h4 class="game-title" > Jeux de la categorie present en bibliotheque </h4>
 
         <ul class="list-group">
-            {% for game in category.games %}
+            {% for game in games %}
             <li class="list-group-item mt-2"><a href=" {{ path('game_show' , {'id' : game.id}) }} ">{{ game.title }}</a></li>
                 
             {% endfor %}

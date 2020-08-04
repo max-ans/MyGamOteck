@@ -80,8 +80,24 @@ class CategoryController extends AbstractController
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
+        $category = $this->categoryRepository->findCategoryWithGames($category->getSlug());
+
+        $gameListByUsers = [];
+
+        foreach($category->getGames() as $game){
+
+            foreach ($game->getUsers() as $user) {
+
+                if ( $this->getUser() === $user){
+                //    dump($game->getTitle() . ' est dans la liste des jeux de '. $user->getUsername());
+                   $gameListByUsers[] = $game;
+                }   
+            }
+        }
+     
         return $this->render('category/show.html.twig',[
-            'category' => $category
+            'category' => $category,
+            'games' => $gameListByUsers
         ]);
     }
     
