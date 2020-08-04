@@ -20,12 +20,7 @@
             {% endfor %}
            
           </ul>
-          <div class="control d-flex justify-content-around mt-5">
-
-              <a class="btn btn-warning" href=" {{ path('category_edit' , {'slug' : category.slug}) }} ">éditer</a>
-              <a class="btn btn-danger" href="{{ path('category_delete' , {'slug' : category.slug}) }} " onclick="alert('Etes vous sur de vouloir supprimer la catégorie ?')" >Supprimer</a>
-
-          </div>
+      
         </div>
         <a class="mt-5" href=" {{ path('category') }} ">Retour a la liste des catégories</a>
 
