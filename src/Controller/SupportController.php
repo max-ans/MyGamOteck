@@ -21,7 +21,8 @@ class SupportController extends AbstractController
 
         // dd($gameBySupport);
         return $this->render('support/show.html.twig', [
-            'support' => $gameBySupport,
+            'games' => $gameBySupport,
+            'support' => $support
          
         ]);
     }

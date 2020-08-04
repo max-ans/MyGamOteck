@@ -15,24 +15,30 @@
 			<table class="table table-bordered mt-3">
 				<tbody class="mb-2">
 
-					{% for game in support.games %}
-
-						<tr>
-							<th class=" text-center align-middle">
-								<img src="{{ asset('images/game')}}/{{game.image}} " alt="" class="picture">
-							</th>
-							<th class="">
-								<h3 class="game-title ">
-									<a href=" {{ path('game_show', {'id' : game.id}) }}" class="game-title">{{ game.title }}</a>
-								</h3>
-								<p class="description mt-3">
-									{{ game.description }}
-								</p>
-							</th>
-
-						</tr>
+					{% if games %}
+					
+					{% for game in games.games %}
+					
+					<tr>
+						<th class=" text-center align-middle">
+							<img src="{{ asset('images/game')}}/{{game.image}} " alt="" class="picture">
+						</th>
+						<th class="">
+							<h3 class="game-title ">
+								<a href=" {{ path('game_show', {'id' : game.id}) }}" class="game-title">{{ game.title }}</a>
+							</h3>
+							<p class="description mt-3">
+								{{ game.description }}
+							</p>
+						</th>
+						
+					</tr>
 					{% endfor %}
-
+					{% else %}
+					<div class="alert alert-primary mt-5" role="alert">
+						Vous n'avez pas enregisté de jeux pour la plateform {{ support.name }}
+					  </div>	
+					{% endif %}
 				</tbody>
 
 			</table>

@@ -82,7 +82,7 @@ class GameController extends AbstractController
 
             $this->addFlash('success' ,  'Votre nouveau jeu a bien été ajouté');
             
-            return $this->redirectToRoute('main');
+            return $this->redirectToRoute('home');
 
            
         }
