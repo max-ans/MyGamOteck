@@ -128,4 +128,17 @@ class GameController extends AbstractController
         ]);
 
     }
+
+    /**
+     * @Route ("/game/delete/{slug}", name="game_delete")
+     */
+    public function delete (Game $game)
+    {
+        $this->manager->remove($game);
+        $this->manager->flush();
+
+        $this->addFlash('success' ,  'le jeu a bien été supprimé de votre liste');
+
+        return $this->redirectToRoute('home');
+    }
 }
