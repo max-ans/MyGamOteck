@@ -27,14 +27,42 @@ class GameVoter extends Voter
         // ... (check conditions and return true to grant permission) ...
         switch ($attribute) {
             case 'gameShow':
-                // dd($user, $subject);
+          
+                // initialize empty arry for insert in him each users
+                $userList = [];
+                foreach ($subject->getUsers() as $users) {
+                    $userList[] = $users;
+                }
+
+                // If user has in userList 
+                if (in_array($user, $userList)   ){
+                  return true;
+                }
                 
-                return true;
+                
                 break;
             case 'edit':
+                $userList = [];
+                foreach ($subject->getUsers() as $users) {
+                    $userList[] = $users;
+                }
+
+                // If user has in userList 
+                if (in_array($user, $userList)   ){
+                  return true;
+                }
                
                 break;
             case 'delete':
+                $userList = [];
+                foreach ($subject->getUsers() as $users) {
+                    $userList[] = $users;
+                }
+
+                // If user has in userList 
+                if (in_array($user, $userList)   ){
+                  return true;
+                }
 
 
             break;

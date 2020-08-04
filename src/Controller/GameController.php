@@ -37,7 +37,7 @@ class GameController extends AbstractController
     {
         
         $game = $this->gameRepository->findOneWithData($id);
-        
+       
         $this->denyAccessUnlessGranted('gameShow', $game);
 
         return $this->render('game/show.html.twig', [
