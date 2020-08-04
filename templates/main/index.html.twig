@@ -19,16 +19,22 @@
       </div>
 </div>
 
+{% if app.user %}
+
+{% else %}
+
 <div class="container mt-5">
     <div class="registration-groups  d-flex justify-content-center">
         <div class="registration-link d-flex justify-content-center">
-            <a href="{{ path('app_register') }}" class="game-title" >S'incrire </a>
+            <a href="{{ path('app_register') }}" class="game-title mr-5" >S'incrire </a>
         </div>
-        <span class="game-title" > / </span>
+        
         <div class="login-link d-flex justify-content-center">
-            <a href=" {{ path('app_login') }} " class="game-title" >Se connecter</a>
+            <a href=" {{ path('app_login') }} " class="game-title ml-5" >Se connecter</a>
         </div>
         
 </div>
+
+{% endif %}
 
 {% endblock %}

@@ -80,53 +80,54 @@
 				</div>
 			</div>
 
-		</div>
+		
 
 
-		<div class="container mt-4">
+			<div class="container mt-4">
 
-			{% for label, messages in app.flashes %}
-				{% for message in messages %}
-					<div class="alert alert-{{ label }} text-center">
-						{{ message }}
-					</div>
+				{% for label, messages in app.flashes %}
+					{% for message in messages %}
+						<div class="alert alert-{{ label }} text-center">
+							{{ message }}
+						</div>
+					{% endfor %}
 				{% endfor %}
-			{% endfor %}
-		</div>
-
-
-		<template>
-			<div class="games-list">
-				<table class="table table-bordered mt-3">
-					<tbody class="mb-2">
-						<tr>
-							<th class="col-2 text-center">
-								<img src="https://via.placeholder.com/100x150" alt="" class="picture">
-							</th>
-							<th class="col-6">
-								<h3 class="game-title"></h3>
-								<p class="description mt-3"></p>
-							</th>
-							<th class="col-2 text-center support">
-								<ul class="device">
-									<li class="game-device"></li>
-									<li class="game-device"></li>
-									<li class="game-device"></li>
-								</ul>
-							</th>
-							<th class="col-2 text-center rate">
-								<i class="far fa-star"></i>
-								<i class="far fa-star"></i>
-								<i class="far fa-star"></i>
-								<i class="far fa-star"></i>
-							</th>
-						</tr>
-					</tbody>
-
-				</table>
-
 			</div>
-		</template>
+
+
+			<template>
+				<div class="games-list">
+					<table class="table table-bordered mt-3">
+						<tbody class="mb-2">
+							<tr>
+								<th class="col-2 text-center">
+									<img src="https://via.placeholder.com/100x150" alt="" class="picture">
+								</th>
+								<th class="col-6">
+									<h3 class="game-title"></h3>
+									<p class="description mt-3"></p>
+								</th>
+								<th class="col-2 text-center support">
+									<ul class="device">
+										<li class="game-device"></li>
+										<li class="game-device"></li>
+										<li class="game-device"></li>
+									</ul>
+								</th>
+								<th class="col-2 text-center rate">
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+								</th>
+							</tr>
+						</tbody>
+
+					</table>
+
+				</div>
+			</template>
+		</div>
 
 		{% block body %}{% endblock %}
 		<script src="https://kit.fontawesome.com/2ad259cd2e.js" crossorigin="anonymous"></script>
