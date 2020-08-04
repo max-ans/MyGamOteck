@@ -129,8 +129,9 @@ __le 04 Aout 2020__
 - Configuration du voter pour l'entité Game
 - Suppression de la possibilité de supprimer/éditer un catégorie.
 - Résolution d'un souci qui faisait que l'on pouvait voir l'intégralité des jeux en bdd sur la page des catégories. (Création d'une custom query afin que seul les jeux de l'utilisateur connecté s'affichent)
+- Mise en place du double champ pour l'inscription au niveau du mot de passe.
 
 ## a faire ##
 
 - Réalisation de la page de profil.
-- Mise en place du double champ pour l'inscription au niveau du mot de passe.
+- Mettre en place un système qui n'enregistre pas un nouveau jeu a chaque ajout de jeu.
