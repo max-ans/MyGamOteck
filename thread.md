@@ -121,3 +121,11 @@ __le 03 Aout 2020__
 - Mettre en place la sécurité ( Pour l'instant un utilisateur peut accéder a n'importe quel jeu par l'url) par des voter !!!
 - Gros travail de css sur le login est registration
 - Mettre en place un double champ pour la confirmation du mot de passe lors de l'inscription
+
+__le 04 Aout 2020__
+
+# Fait #
+
+- Configuration du voter pour l'entité Game
+- Suppression de la possibilité de supprimer/éditer un catégorie.
+ 
