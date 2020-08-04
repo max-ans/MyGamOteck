@@ -43,6 +43,10 @@ class GameRepository extends ServiceEntityRepository
         $queryBuilder->where('game.id = :id');
         $queryBuilder->leftJoin('game.supports', 'supports');
         $queryBuilder->addSelect('supports');
+        $queryBuilder->leftJoin('game.users', 'user');
+        $queryBuilder->addSelect('user');
+        $queryBuilder->leftJoin('game.categories', 'categories');
+        $queryBuilder->addSelect('categories');
         $queryBuilder->setParameter(':id', $id);
         $query = $queryBuilder->getQuery();
         

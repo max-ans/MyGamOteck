@@ -12,7 +12,7 @@ class GameVoter extends Voter
     {
         // replace with your own logic
         // https://symfony.com/doc/current/security/voters.html
-        return in_array($attribute, ['gameshow', 'edit', 'delete'])
+        return in_array($attribute, ['gameShow', 'edit', 'delete'])
             && $subject instanceof \App\Entity\Game;
     }
 
@@ -26,13 +26,13 @@ class GameVoter extends Voter
 
         // ... (check conditions and return true to grant permission) ...
         switch ($attribute) {
-            case 'gameshow':
-                // logic to determine if the user can EDIT
-                // return true or false
+            case 'gameShow':
+                // dd($user, $subject);
+                
+                return true;
                 break;
             case 'edit':
-                // logic to determine if the user can VIEW
-                // return true or false
+               
                 break;
             case 'delete':
 
