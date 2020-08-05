@@ -3,7 +3,7 @@
     {% if app.user %}
     {{ app.user.email }}
     <a class="aside-link" href="{{ path('home') }}">Mes jeux</a>
-    <a class="aside-link" href="">Mon profil</a>
+    <a class="aside-link" href="{{ path('user_show' , {'id' : app.user.id})}} ">Mon profil</a>
     <a class="aside-link" href="{{ path('app_logout') }}">Déconnection</a>
     {% endif %}
 </div>
