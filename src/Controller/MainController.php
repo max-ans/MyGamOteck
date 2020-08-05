@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\ContactType;
 use App\Repository\GameRepository;
+use Swift_Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -55,12 +56,31 @@ class MainController extends AbstractController
     /**
      * @Route("/contact" , name="contact")
      */
-    public function contact(Request $request)
+    public function contact(Request $request, Swift_Mailer $mailer)
     {
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
+          
+            $datas= $request->request->get('contact');
+           
+            $message = (new \Swift_Message('Gamoteck'))
+            ->setFrom($datas['email'])
+            ->setTo('royer.maxence.dev@gmail.com')
+            ->setBody( $this->renderView(
+                'emails/base.html.twig',
+                ['datas' => $datas]
+            ),
+            'text/html'
+        )
+        ;
+    
+        $mailer->send($message);
+                
+        $this->addFlash('success', 'Votre message a bien été envoyé, merci');
+
+        return $this->redirectToRoute('main');
 
         }
 

@@ -28,7 +28,8 @@ class ContactType extends AbstractType
                 'label' => 'Message'
             ])
             ->add('terms', CheckboxType::class, [
-                'label' => 'J\'accepte d\'être contacter par le développeur de ce site '
+                'label' => 'J\'accepte d\'être contacté par le développeur de ce site ',
+               
             ])
         ;
     }
