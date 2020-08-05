@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Form\ContactType;
 use App\Repository\GameRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
@@ -50,5 +52,21 @@ class MainController extends AbstractController
         return $this->render('main/gamoteck.html.twig');
     }
 
-   
+    /**
+     * @Route("/contact" , name="contact")
+     */
+    public function contact(Request $request)
+    {
+        $form = $this->createForm(ContactType::class);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+        }
+
+        return $this->render('main/contact.html.twig',[
+           'form' => $form->createView() 
+        ]);
+
+    }
 }
