@@ -139,3 +139,15 @@ __le 04 Aout 2020__
 - Mettre en place un système qui n'enregistre pas un nouveau jeu a chaque ajout de jeu.
 - /!\/!\/!\/!\/!\ Modifier la relation entre Game et User  dans une branche séparée pour essayer la relations OneToMany/!\/!\/!\/!\/!\/!\/!\
 - /!\/!\/!\/!\/!\ Un Jeux peut avoir plusieurs user et un user est relier a Un et un seul Jeu /!\/!\/!\/!\/!\
+
+
+__le 05 Aout 2020__
+
+# Fait #
+
+- Réalisation de la page ou l'utilisateur peut consulter son compte et modifié ou supprimer ses informations personnel
+
+## a faire ##
+
+- La page "qui sommes nous ?"
+- la page de contacte avec swiftMailer pour l'envoie de mail.
