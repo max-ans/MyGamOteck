@@ -325,3 +325,9 @@ label {
 .aside-link{
     margin: 5%;
 }
+.dev-pic{
+    width: 10em;
+    border-radius: 20%;
+    border: 5px solid;
+    border-color: rgba(35, 56, 172, 0.466); ;
+}
