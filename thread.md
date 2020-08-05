@@ -134,6 +134,8 @@ __le 04 Aout 2020__
 ## a faire ##
 
 - Réalisation de la page de profil.
+
+
 - Mettre en place un système qui n'enregistre pas un nouveau jeu a chaque ajout de jeu.
 - /!\/!\/!\/!\/!\ Modifier la relation entre Game et User  dans une branche séparée pour essayer la relations OneToMany/!\/!\/!\/!\/!\/!\/!\
 - /!\/!\/!\/!\/!\ Un Jeux peut avoir plusieurs user et un user est relier a Un et un seul Jeu /!\/!\/!\/!\/!\
