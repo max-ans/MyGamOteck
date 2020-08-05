@@ -41,4 +41,14 @@ class MainController extends AbstractController
             'games' => $games,
         ]);
     }
+
+     /**
+     * @Route("/gamoteck" , name="gamoteck")
+     */
+    public function gamoteck()
+    {
+        return $this->render('main/gamoteck.html.twig');
+    }
+
+   
 }

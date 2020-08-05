@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container">
+    <div class="media-right text-center border rounded">
+        <h5 class="mt-0 game-title media-text p-3">My Gamo'Teck</h5>
+            <img  class="dev-pic " src=" {{ asset('images/')}}max.jpg " alt="photo du développeur du site">
+        <p class="media-text p-3">
+        Hello ami(e) gameur/euse !!!
+        Je suis Maxence, développeur junior tout droit sorti de la formation <a href="https://oclock.io/">O'clock</a> (spécialisation Symfony). 
+        Cette formation m'as donné toutes les bases nécessaires pour pouvoir apprendre par moi-même et réaliser un site comme celui-ci.<br>
+        <br>
+        Aujourd'hui je te propose, à toi visiteur, de parcourir ce site et à me faire part de ton retour, bon ou mauvais, <a href="#">ici</a>. 
+        Actuellement, ce projet est a l'état de MVP (Minimun Viable Product) donc, quelques soucis subsitent et le responsive design n'est pas encore au rendez-vous, mais sache que je travail quotidiennement à l'amélioration de celui-ci. 
+        <br><br>
+        Je te souhaite une agréable visite.
+        <br><br><br>
+
+        Maxence.
+
+
+        </p>.
+    </div>
+
+{% if app.user %}
+
+{% else %}
+
+    <div class="container mt-5">
+        <div class="registration-groups  d-flex justify-content-center">
+            <div class="registration-link d-flex justify-content-center">
+                <a href="{{ path('app_register') }}" class="game-title mr-5" >S'incrire </a>
+            </div>
+
+            <div class="login-link d-flex justify-content-center">
+                <a href=" {{ path('app_login') }} " class="game-title ml-5" >Se connecter</a>
+            </div>
+
+       </div>
+    </div>
+{% endif %}
+{% endblock %}
