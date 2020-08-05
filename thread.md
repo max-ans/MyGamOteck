@@ -146,8 +146,9 @@ __le 05 Aout 2020__
 # Fait #
 
 - Réalisation de la page ou l'utilisateur peut consulter son compte et modifié ou supprimer ses informations personnel
+- Création dde la page de contact avec le système de mailing (swiftMailer)
+- Création de la page de présentation du dev.
 
 ## a faire ##
 
-- La page "qui sommes nous ?"
-- la page de contacte avec swiftMailer pour l'envoie de mail.
+- Cration de test unitaire et fonctionnel.
